@@ -222,6 +222,8 @@ cudaError_t MaxSmOccupancy(
 
 #else
 
+    return CubDebug(cudaErrorInvalidConfiguration);
+/*
     return cudaOccupancyMaxActiveBlocksPerMultiprocessor (
         &max_sm_occupancy,
         kernel_ptr,
